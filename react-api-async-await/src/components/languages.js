@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 
 const LANGUAGES = [
@@ -48,7 +48,7 @@ const Languages = ({ language, onLanguageChange }) => {
             {LANGUAGES.map(({ label, value }) => {
               return (
                 <a
-                  href="#"
+                  href='#'
                   onClick={() => onSelect(value)}
                   className="dropdown-item"
                 >
