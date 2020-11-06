@@ -1,4 +1,3 @@
-/* eslint-disable import/no-anonymous-default-export */
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -19,6 +18,7 @@ const doTranslation = async (input, languageCode, cancelToken) => {
   }
 };
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default ({ language, text }) => {
   const [translated, setTranslated] = useState("");
 
