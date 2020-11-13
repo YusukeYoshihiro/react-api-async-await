@@ -1,29 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
+import { defaultLanguage, LANGUAGES, languageMap } from "../constants";
 
-const LANGUAGES = [
-  { label: "Afrikaans", value: "af" },
-  { label: "Arabic", value: "ar" },
-  { label: "French", value: "fr" },
-  { label: "Hindi", value: "hi" },
-  { label: "Japanese", value: "ja" },
-  { label: "Portuguese", value: "pt" },
-  { label: "Russian", value: "ru" },
-  { label: "Simplified Chinese", value: "zh-CN" },
-  { label: "Spanish", value: "es" },
-  { label: "Swahili", value: "sw" },
-  { label: "Thai", value: "th" }
-];
-
-const Languages = ({ language, onLanguageChange }) => {
-  if (language === undefined) {
-    language = "es";
-  }
-  const languageConfig = LANGUAGES.find((l) => l.value === language);
+const Languages = ({ language = defaultLanguage, onLanguageChange }) => {
+  const languageConfig = languageMap[language];
+  console.log(languageConfig);
   if (!languageConfig) {
-    throw new Error(`Unknown language code '${language}'`);
+    throw new Error(`Unknown language code '${language}'`)
   }
-
   const [open, setOpen] = useState(false);
 
   const onSelect = (language) => {
@@ -32,7 +16,7 @@ const Languages = ({ language, onLanguageChange }) => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <label className="label">Select Language</label>
       <div className={`dropdown ${open && "is-active"}`}>
         <div className="dropdown-trigger">
@@ -48,7 +32,8 @@ const Languages = ({ language, onLanguageChange }) => {
             {LANGUAGES.map(({ label, value }) => {
               return (
                 <a
-                  href='#'
+                  key={value}
+                  href="#"
                   onClick={() => onSelect(value)}
                   className="dropdown-item"
                 >
@@ -59,7 +44,7 @@ const Languages = ({ language, onLanguageChange }) => {
           </div>
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 
