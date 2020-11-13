@@ -14,7 +14,7 @@ export default () => {
   const [translated, setTranslated] = useState("");
 
   const Dotranslation = async (input, lang) => {
-    //do trnanslate using API is imported from servises/api.js
+    //do translate using API is imported from services/api.js
     const translated = await doTranslate(input, lang);
     setTranslated(translated);
   };
