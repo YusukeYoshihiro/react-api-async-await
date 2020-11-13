@@ -2,7 +2,8 @@
 
 // To assign apiUrl & apiKey
 const apiUrl =  "https://translation.googleapis.com/language/translate/v2";
-const apiKey =  "AIzaSyBRrOoUb1h2iD46qFp_1ADDLEXysV9mlYFM";
+const apiKey =  "AIzaSyCf0Xy0OnhxlduyEt3K8zP-sOuu-l_u6uA";
+// AIzaSyBRrOoUb1h2iD46qFp_1ADDLEXysV9mlYFM ----> mine
 export const url = `${apiUrl}?Key=${apiKey}`;
 
 // To assign default value of Language in dropdown menu
